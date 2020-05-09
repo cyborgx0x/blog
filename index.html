@@ -1,156 +1,174 @@
-
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  <title> My Visualization</title>
-  <meta name="author" content="cyborgx0x">
-  <meta name="description" content="So this is incredible!">
-
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <link rel="canonical" href="http://cyborgx0x.github.io/">
-  <link href="/blog/favicon.png" rel="icon">
-  <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/blog/atom.xml" rel="alternate" title="My Visualization" type="application/atom+xml">
-  <script src="/blog/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/blog/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-
-
+	<meta charset="utf-8">
+	<title>My Visualization</title>
+	<meta name="author" content="cyborgx0x">
+	<meta name="description" content="So this is incredible!">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="canonical" href="http://cyborgx0x.github.io/">
+	<link href="/blog/favicon.png" rel="icon">
+	<link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/blog/atom.xml" rel="alternate" title="My Visualization" type="application/atom+xml">
+	<script src="/blog/javascripts/modernizr-2.0.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))
+	</script>
+	<script src="/blog/javascripts/octopress.js" type="text/javascript"></script>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+	<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/blog/">My Visualization WORK</a></h1>
+<body>
+	<header role="banner">
+		<hgroup>
+			<h1><a href="/blog/">My Visualization WORK</a></h1>
+			<h2>For the new understanding of data</h2>
+		</hgroup>
+	</header>
+		<div id="main">
+		<div id="content">
+			<div class="blog-index">
+				<article>
+					<header>
+						<div class="container">
+							<div class="row">
+								<div class="sidebar special-style col-xl-4">
+                  <nav role="navigation">
+                		<ul class="subscription" data-subscription="rss">
+                			<li><a href="/blog/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a>
+                			</li>
+                		</ul>
+                		<form action="https://www.google.com/search" method="get">
+                			<fieldset role="search">
+                				<input type="hidden" name="sitesearch" value="cyborgx0x.github.io">
+                				<input class="search" type="text" name="q" results="0" placeholder="Search" />
+                			</fieldset>
+                		</form>
+                		<ul class="main-navigation">
+                			<li><a href="/blog/">Blog</a>
+                			</li>
+                			<li><a href="/blog/blog/archives">Archives</a>
+                			</li>
+                		</ul>
+                	</nav>
+									<p class="meta">
+										<time class='entry-date' datetime='2017-06-21T18:26:56+07:00'><span class='date'><span class='date-month'>Jun</span>  <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2017</span></span> <span class='time'>6:26 pm</span>
+										</time>
+									</p>
+								</div>
+								<div class="main-content normal-style col-xl-8">
+									<h1 class="entry-title">GDP các nước SGN, VNM, THL, IRS, PHL</a></h1>
+									<img src="GDP running_1_1.gif" alt="GDP các nước SGN, VNM, THL, IRS, PHL">
+									<canvas id="myChart"></canvas>
+									<script>
+										var ctx = document.getElementById('myChart').getContext('2d');
+										      var chart = new Chart(ctx, {
+										    // The type of chart we want to create
+										    type: 'line',
 
-    <h2>For the new understanding of data</h2>
+										    // The data for our dataset
+										    data: {
+										        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+										        datasets: [{
+										            label: 'My First dataset',
+										            backgroundColor: 'rgb(255, 99, 132)',
+										            borderColor: 'rgb(255, 99, 132)',
+										            data: [0, 10, 5, 2, 20, 30, 45]
+										        }]
+										    },
 
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/blog/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-
-</ul>
-
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="cyborgx0x.github.io">
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-
-<ul class="main-navigation">
-  <li><a href="/blog/">Blog</a></li>
-  <li><a href="/blog/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-
-
-
-    <article>
-
-  <header>
-
-      <h1 class="entry-title"><a href="/blog/blog/2017/06/21/complete-your-quest/">Complete Your Quest!</a></h1>
-    <img src="GDP running_1_1.gif" alt="GDP các nước SGN, VNM, THL, IRS, PHL"
-
-      <p class="meta">
-
-
-
-
-
-<time class='entry-date' datetime='2017-06-21T18:26:56+07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2017</span></span> <span class='time'>6:26 pm</span></time>
-
-      </p>
-
-  </header>
-
-
-  <div class="entry-content"><p><strong>It is completely a good way to understand this world</strong>
-<strong>It is completely a good way to understand this world</strong>
-<strong>It is completely a good way to understand this world</strong>
-<strong>It is completely a good way to understand this world</strong></p>
-</div>
-
-
-
-
-    </article>
-
-  <div class="pagination">
-
-    <a href="/blog/blog/archives">Blog Archives</a>
-
-  </div>
-</div>
-<aside class="sidebar">
-
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-
-      <li class="post">
-        <a href="/blog/blog/2017/06/21/complete-your-quest/">Complete Your Quest!</a>
-      </li>
-
-  </ul>
-</section>
-
-
-
-
-
-
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
+										    // Configuration options go here
+										    options: {}
+										});
+									</script>
+									<canvas id="chart2" width="400" height="400"></canvas>
+									<script>
+										var ctx = document.getElementById('chart2');
+										var myChart = new Chart(ctx, {
+										    type: 'bar',
+										    data: {
+										        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+										        datasets: [{
+										            label: '# of Votes',
+										            data: [12, 19, 3, 5, 2, 3],
+										            backgroundColor: [
+										                'rgba(255, 99, 132, 0.2)',
+										                'rgba(54, 162, 235, 0.2)',
+										                'rgba(255, 206, 86, 0.2)',
+										                'rgba(75, 192, 192, 0.2)',
+										                'rgba(153, 102, 255, 0.2)',
+										                'rgba(255, 159, 64, 0.2)'
+										            ],
+										            borderColor: [
+										                'rgba(255, 99, 132, 1)',
+										                'rgba(54, 162, 235, 1)',
+										                'rgba(255, 206, 86, 1)',
+										                'rgba(75, 192, 192, 1)',
+										                'rgba(153, 102, 255, 1)',
+										                'rgba(255, 159, 64, 1)'
+										            ],
+										            borderWidth: 1
+										        }]
+										    },
+										    options: {
+										        scales: {
+										            yAxes: [{
+										                ticks: {
+										                    beginAtZero: true
+										                }
+										            }]
+										        }
+										    }
+										});
+									</script>
+								</div>
+							</div>
+						</div>
+					</header>
+				</article>
+				<div class="pagination"> <a href="/blog/blog/archives">Blog Archives</a>
+				</div>
+			</div>
+			<aside class="sidebar">
+				<section>
+					<h1>Recent Posts</h1>
+					<ul id="recent_posts">
+						<li class="post"> <a href="/blog/blog/2017/06/21/complete-your-quest/">Complete Your Quest!</a>
+						</li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+	</div>
+	<footer role="contentinfo">
+		<p>Copyright &copy; 2017 - Your Name - <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+		</p>
+	</footer>
+	<script type="text/javascript">
+		(function(){
+		      var twitterWidgets = document.createElement('script');
+		      twitterWidgets.type = 'text/javascript';
+		      twitterWidgets.async = true;
+		      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+		      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+		    })();
+	</script>
 </body>
+
 </html>

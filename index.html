@@ -48,11 +48,15 @@
 			<div class="blog-index">
 				<article>
 					<header>
-
-
 									<h1 class="entry-title">GDP các nước SGN, VNM, THL, IRS, PHL</a></h1>
 									<canvas id="myChart"></canvas>
 									<script>
+									Getdata();
+									async function Getdata() {
+										const response = await fetch('gdp.csv');
+										const data = await response.text();
+										console.log(data);
+									}
 										var ctx = document.getElementById('myChart').getContext('2d');
 										      var chart = new Chart(ctx, {
 										    // The type of chart we want to create

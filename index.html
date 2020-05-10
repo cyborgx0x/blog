@@ -17,7 +17,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="canonical" href="http://cyborgx0x.github.io/">
 	<link href="favicon.png" rel="icon">
-	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="atom.xml" rel="alternate" title="My Visualization" type="application/atom+xml">
 	<script src="javascripts/modernizr-2.0.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,152 +30,87 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootst	rap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<header role="banner">
+<div class="container">
 		<hgroup>
 			<h1><a href="/blog/">CYBORGX0X</a></h1>
 			<h2>DATA Visualization work</h2>
 		</hgroup>
-
-	</header>
-		<div id="main">
-
-		<div id="content">
-			<div class="blog-index">
-				<article>
-					<header>
 									<h1 class="entry-title">GDP các nước SGN, VNM, THL, IRS, PHL</a></h1>
-									<canvas id="myChart"></canvas>
+									<canvas id="myChart" width="800px" height="400px"></canvas>
 									<script>
-									Getdata();
+									const xlabel = [];
+									const singapore =[];
+									const vietnam =[];
+									const thailand =[];
+									const israel =[];
+									const philippines =[];
+									ChartIt();
 									async function Getdata() {
 										const response = await fetch('gdp.csv');
 										const data = await response.text();
-										console.log(data);
+										const table=data.split(/\n/).slice(1);
+										table.forEach(row => {
+											const columns = row.split(',');
+											const year = columns[0];
+											xlabel.push(year);
+											const sgp = columns[1];
+											singapore.push(sgp);
+											const vnm = columns[2];
+											vietnam.push(vnm);
+											const thl = columns[3];
+											thailand.push(thl);
+											const irs = columns[4];
+											israel.push(irs);
+											const phl = columns[5];
+											philippines.push(phl);
+										});
 									}
-										var ctx = document.getElementById('myChart').getContext('2d');
-										      var chart = new Chart(ctx, {
-										    // The type of chart we want to create
+									console.log(xlabel);
+									async function ChartIt() {
+										await Getdata();
+										const ctx = document.getElementById('myChart').getContext('2d');
+										    const chart = new Chart(ctx, {
 										    type: 'line',
-
-										    // The data for our dataset
 										    data: {
-										        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','January', 'February', 'March', 'April', 'May', 'June', 'July'],
+										        labels: xlabel,
 										        datasets: [{
-										            label: 'My First dataset',
-
+										            label: 'SINGAPORE',
 										            borderColor: 'rgb(255, 99, 132)',
-										            data: [0, 10, 5, 2, 20, 30, 45]
-										        },
-                            {
-                                label: 'GDP SINGAPORE',
-
-                                borderColor: 'rgb(43, 227, 30)',
-                                data: [0.704756305, 0.764634784, 0.82624461, 0.917614008, 0.894159153, 0.974650464, 1.096432771, 1.238043904, 1.425715406, 1.659904613]
-                            },
-                          ]
+										            data: singapore,
+										        		},
+																{
+												            label: 'Vietnam',
+												            borderColor: 'rgb(237, 54, 26)',
+												            data: vietnam,
+												        },
+																{
+												            label: 'Thailand',
+												            borderColor: 'rgb(124, 21, 140)',
+												            data: thailand,
+												        },
+																{
+												            label: 'Israel',
+												            borderColor: 'rgb(237, 54, 26)',
+												            data: israel,
+												        },
+																{
+												            label: 'Philippines',
+												            borderColor: 'rgb(124, 21, 140)',
+												            data: philippines,
+												        },
+													]
 										    },
-
 										    // Configuration options go here
 										    options: {}
-										});
-									</script>
-									<canvas id="chart2" width="400" height="400"></canvas>
-									<script>
-										var ctx = document.getElementById('chart2');
-										var myChart = new Chart(ctx, {
-										    type: 'bar',
-										    data: {
-										        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-										        datasets: [{
-										            label: '# of Votes',
-										            data: [12, 19, 3, 5, 2, 3],
-										            backgroundColor: [
-										                'rgba(255, 99, 132, 0.2)',
-										                'rgba(54, 162, 235, 0.2)',
-										                'rgba(255, 206, 86, 0.2)',
-										                'rgba(75, 192, 192, 0.2)',
-										                'rgba(153, 102, 255, 0.2)',
-										                'rgba(255, 159, 64, 0.2)'
-										            ],
-										            borderColor: [
-										                'rgba(255, 99, 132, 1)',
-										                'rgba(54, 162, 235, 1)',
-										                'rgba(255, 206, 86, 1)',
-										                'rgba(75, 192, 192, 1)',
-										                'rgba(153, 102, 255, 1)',
-										                'rgba(255, 159, 64, 1)'
-										            ],
-										            borderWidth: 1
-										        }]
-										    },
-										    options: {
-										        scales: {
-										            yAxes: [{
-										                ticks: {
-										                    beginAtZero: true
-										                }
-										            }]
-										        }
-										    }
-										});
+										});};
 									</script>
 
-					</header>
-				</article>
-				<div class="pagination"> <a href="/blog/blog/archives">Blog Archives</a>
-				</div>
-			</div>
-			<aside class="sidebar">
-        <nav role="navigation">
-          <ul class="subscription" data-subscription="rss">
-            <li><a href="/blog/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a>
-            </li>
-          </ul>
-          <form action="https://www.google.com/search" method="get">
-            <fieldset role="search">
-              <input type="hidden" name="sitesearch" value="cyborgx0x.github.io">
-              <input class="search" type="text" name="q" results="0" placeholder="Search" />
-            </fieldset>
-          </form>
-          <ul class="main-navigation">
-            <li><a href="/blog/">Blog</a>
-            </li>
-            <li><a href="/blog/blog/archives">Archives</a>
-            </li>
-          </ul>
-        </nav>
-        <p class="meta">
-          <time class='entry-date' datetime='2017-06-21T18:26:56+07:00'><span class='date'><span class='date-month'>Jun</span>  <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2017</span></span> <span class='time'>6:26 pm</span>
-          </time>
-        </p>
-				<section>
-
-					<h1>Recent Posts</h1>
-					<ul id="recent_posts">
-						<li class="post"> <a href="/blog/blog/2017/06/21/complete-your-quest/">Complete Your Quest!</a>
-						</li>
-					</ul>
-				</section>
-			</aside>
-		</div>
-	</div>
-	<footer role="contentinfo">
-		<p>Copyright &copy; 2017 - Your Name - <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-		</p>
-	</footer>
-	<script type="text/javascript">
-		(function(){
-		      var twitterWidgets = document.createElement('script');
-		      twitterWidgets.type = 'text/javascript';
-		      twitterWidgets.async = true;
-		      twitterWidgets.src = 'https://platform.twitter.com/widgets.js';
-		      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-		    })();
-	</script>
+<center><img src="GDP running_1_1.gif"></center>
+</div>
 
 </body>
 

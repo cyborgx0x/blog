@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://cyborgx0x.github.io/sitemap.xml 

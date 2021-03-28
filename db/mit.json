@@ -1,0 +1,8 @@
+{
+  "course": "8.01",
+  "name": {
+      "origin" : "Physics I – Classical Mechanics",
+      "trans" : "Cơ Học Cổ Điển"
+  },
+  "tag" : ["cơ học Newton", "Vật lý I", "classical"]
+}

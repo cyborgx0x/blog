@@ -1,4 +1,6 @@
-#Javascript cho hàm sincos
+layout: page
+title: "Javascript cho hàm sincos"
+permalink: /sincos/
 
 
 ```javascript
